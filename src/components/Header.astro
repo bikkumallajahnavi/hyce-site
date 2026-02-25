@@ -52,6 +52,7 @@ const navItems = [
       <span></span>
     </button>
   </div>
+  <div class="nav-backdrop" id="nav-backdrop"></div>
 </header>
 
 <style>
@@ -146,7 +147,20 @@ const navItems = [
     width: 24px;
     height: 2px;
     background: var(--color-white);
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
 
   .nav-dropdown {
@@ -205,6 +219,18 @@ const navItems = [
     background: rgba(201, 168, 76, 0.08);
   }
 
+  .nav-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+  }
+
+  .nav-backdrop.visible {
+    display: block;
+  }
+
   /* Tablet landscape — tighten nav spacing */
   @media (max-width: 1024px) {
     .main-nav {
@@ -245,6 +271,7 @@ const navItems = [
       transition: right 0.3s ease;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
+      z-index: 999;
     }
 
     .main-nav.open {
@@ -311,22 +338,54 @@ const navItems = [
   }
 </style>
 
-<script>
-  const header = document.getElementById('site-header');
-  const toggle = document.getElementById('menu-toggle');
-  const nav = document.getElementById('main-nav');
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    var header = document.getElementById('site-header');
+    var toggle = document.getElementById('menu-toggle');
+    var nav = document.getElementById('main-nav');
+    var backdrop = document.getElementById('nav-backdrop');
 
-  window.addEventListener('scroll', () => {
-    header?.classList.toggle('scrolled', window.scrollY > 50);
-  });
+    if (!toggle || !nav || !header) return;
 
-  toggle?.addEventListener('click', () => {
-    nav?.classList.toggle('open');
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!nav?.contains(e.target as Node) && !toggle?.contains(e.target as Node)) {
-      nav?.classList.remove('open');
+    function closeMenu() {
+      nav.classList.remove('open');
+      toggle.classList.remove('active');
+      if (backdrop) backdrop.classList.remove('visible');
+      document.body.style.overflow = '';
     }
+
+    function openMenu() {
+      nav.classList.add('open');
+      toggle.classList.add('active');
+      if (backdrop) backdrop.classList.add('visible');
+      document.body.style.overflow = 'hidden';
+    }
+
+    window.addEventListener('scroll', function() {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (nav.classList.contains('open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    if (backdrop) {
+      backdrop.addEventListener('click', function() {
+        closeMenu();
+      });
+    }
+
+    var navLinks = nav.querySelectorAll('a');
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        closeMenu();
+      });
+    });
   });
 </script>
