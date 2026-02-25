@@ -3,91 +3,77 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Home">
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-slides">
       <div class="hero-slide active" data-index="0">
-        <div class="hero-bg" style="background-image: url('/images/projects/google-campus.png');" role="img" aria-label="Google Campus Hyderabad by HYCE"></div>
+        <div class="hero-bg" style="background-image: url('/images/projects/google-campus.png');"></div>
       </div>
       <div class="hero-slide" data-index="1">
-        <div class="hero-bg" style="background-image: url('/images/projects/amazon-campus.jpg');" role="img" aria-label="Amazon Campus Hyderabad by HYCE"></div>
+        <div class="hero-bg" style="background-image: url('/images/projects/amazon-campus.jpg');"></div>
       </div>
       <div class="hero-slide" data-index="2">
-        <div class="hero-bg" style="background-image: url('/images/projects/microsoft-building.jpg');" role="img" aria-label="Microsoft Building by HYCE"></div>
+        <div class="hero-bg" style="background-image: url('/images/projects/microsoft-building.jpg');"></div>
       </div>
     </div>
     <div class="container hero-content">
-      <span class="hero-badge">18 Years of Excellence & Perfection</span>
-      <h1 class="hero-title">Global Leader in<br />Infrastructure<br />& Services</h1>
-      <p class="hero-text">
-        From planning and design to construction and maintenance, we have mastered them all. Construction quality is a crucial factor in growing your business and staying profitable.
-      </p>
+      <div class="hero-top-line"></div>
+      <span class="hero-badge">Est. 2005</span>
+      <h1 class="hero-title">We Build<br/><span class="gold-text">Landmarks</span></h1>
+      <p class="hero-text">18+ years crafting iconic infrastructure — from Google & Amazon campuses to hospitals and commercial landmarks across Hyderabad.</p>
       <div class="hero-actions">
-        <a href="/services/" class="btn btn-primary">Our Services</a>
-        <a href="/about/" class="btn btn-outline">Learn More</a>
+        <a href="/services/" class="hero-btn-primary">Explore Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="/about/" class="hero-btn-ghost">About HYCE</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>30+</strong><span>Projects</span></div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat"><strong>15+</strong><span>Clients</span></div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat"><strong>98%</strong><span>Satisfaction</span></div>
       </div>
     </div>
-    <div class="hero-scroll">
-      <span>Scroll Down</span>
-      <div class="scroll-line"></div>
-    </div>
     <div class="hero-dots">
-      <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
-      <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
-      <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
+      <button class="hero-dot active" data-slide="0"></button>
+      <button class="hero-dot" data-slide="1"></button>
+      <button class="hero-dot" data-slide="2"></button>
     </div>
   </section>
 
-  <!-- Services Overview -->
+  <!-- Services -->
   <section class="services-overview">
     <div class="container">
       <div class="services-header">
         <span class="section-label">What We Offer</span>
         <h2 class="section-title">A one stop solution for all your civil engineering construction.</h2>
-        <p class="section-text">
-          We have been in the industry for over 18 years, providing exceptional service and delivering quality solutions to our clients. Our team consists of highly qualified professionals who strive to meet and exceed our client's expectations.
-        </p>
       </div>
       <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M3 7v14M21 7v14M6 7V4l6-2 6 2v3M9 21v-4h6v4M9 10h.01M15 10h.01M9 14h.01M15 14h.01"/></svg>
-          </div>
-          <h3>Civil Construction</h3>
-          <p>Construction of buildings, commercial plants, pipe racks and connecting bridges with precision engineering.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg>
-          </div>
-          <h3>External Development</h3>
-          <p>Wide range of finishing works involving natural stones, tiles, compound walls, roads, gates, and fencing.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20h16M4 20V10l8-6 8 6v10M9 20v-4a3 3 0 016 0v4"/></svg>
-          </div>
-          <h3>Hardscape</h3>
-          <p>Hard floorings, pathways, colored concretes, wash concretes and all related hardscape works.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 10-16 0c0 4.5 4 8 8 12z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <h3>Surveys</h3>
-          <p>Geotechnical investigation, topographical surveys, and all types of geotechnical consultancy works.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c-4.97 0-9-2.69-9-6v-4c0 3.31 4.03 6 9 6s9-2.69 9-6v4c0 3.31-4.03 6-9 6z"/><path d="M12 16c-4.97 0-9-2.69-9-6V6c0 3.31 4.03 6 9 6s9-2.69 9-6v4c0 3.31-4.03 6-9 6z"/><ellipse cx="12" cy="6" rx="9" ry="4"/></svg>
-          </div>
-          <h3>Landscape</h3>
-          <p>Green walls, irrigation systems, plumbing systems, plants, trees and comprehensive landscape works.</p>
-        </div>
-      </div>
-      <div class="services-actions">
-        <a href="/services/" class="btn btn-primary">View All Services</a>
+        <a href="/services/" class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M3 7v14M21 7v14M6 7V4l6-2 6 2v3M9 21v-4h6v4M9 10h.01M15 10h.01M9 14h.01M15 14h.01"/></svg></div>
+          <div class="service-text"><h3>Civil Construction</h3><p>Buildings, commercial plants, pipe racks & bridges</p></div>
+          <svg class="service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/services/" class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg></div>
+          <div class="service-text"><h3>External Development</h3><p>Natural stones, tiles, walls, roads & fencing</p></div>
+          <svg class="service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/services/" class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20h16M4 20V10l8-6 8 6v10M9 20v-4a3 3 0 016 0v4"/></svg></div>
+          <div class="service-text"><h3>Hardscape</h3><p>Floorings, pathways, colored & wash concretes</p></div>
+          <svg class="service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/services/" class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 10-16 0c0 4.5 4 8 8 12z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="service-text"><h3>Surveys</h3><p>Geotechnical investigation & topographical surveys</p></div>
+          <svg class="service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/services/" class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c-4.97 0-9-2.69-9-6v-4c0 3.31 4.03 6 9 6s9-2.69 9-6v4c0 3.31-4.03 6-9 6z"/><path d="M12 16c-4.97 0-9-2.69-9-6V6c0 3.31 4.03 6 9 6s9-2.69 9-6v4c0 3.31-4.03 6-9 6z"/><ellipse cx="12" cy="6" rx="9" ry="4"/></svg></div>
+          <div class="service-text"><h3>Landscape</h3><p>Green walls, irrigation, plants & plumbing</p></div>
+          <svg class="service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -97,67 +83,51 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container profile-grid">
       <div class="profile-image">
         <div class="profile-img-wrapper">
-          <img src="/images/hero/company-profile.png" alt="HYCE Engineers & Infra - Commercial construction" loading="lazy" />
+          <img src="/images/hero/company-profile.png" alt="HYCE Engineers & Infra" loading="lazy" />
         </div>
         <div class="profile-exp">
           <span class="exp-number">18+</span>
-          <span class="exp-text">Years of<br/>Experience</span>
+          <span class="exp-text">Years</span>
         </div>
       </div>
       <div class="profile-content">
-        <span class="section-label">What We Offer</span>
-        <h2 class="section-title">Company Profile</h2>
-        <p class="section-text">
-          We strive to stay up-to-date with the latest technologies and to provide our clients with the highest quality of service. We have a proven track record of success and have worked on a variety of projects, from simple to complex.
-        </p>
+        <span class="section-label">Company Profile</span>
+        <h2 class="section-title">Building excellence since 2005.</h2>
+        <p class="section-text">We strive to stay up-to-date with the latest technologies and to provide our clients with the highest quality of service. A proven track record across 30+ projects.</p>
         <div class="profile-highlights">
-          <div class="highlight">
-            <span class="highlight-number">30+</span>
-            <span class="highlight-label">Completed Projects</span>
-          </div>
-          <div class="highlight">
-            <span class="highlight-number">15+</span>
-            <span class="highlight-label">Happy Clients</span>
-          </div>
-          <div class="highlight">
-            <span class="highlight-number">98%</span>
-            <span class="highlight-label">Satisfaction Rate</span>
-          </div>
+          <div class="highlight"><span class="highlight-number">30+</span><span class="highlight-label">Projects</span></div>
+          <div class="highlight"><span class="highlight-number">15+</span><span class="highlight-label">Clients</span></div>
+          <div class="highlight"><span class="highlight-number">98%</span><span class="highlight-label">Satisfaction</span></div>
         </div>
         <a href="/about/" class="btn btn-primary">More About Us</a>
       </div>
     </div>
   </section>
 
-  <!-- Founder Section -->
+  <!-- Founder -->
   <section class="founder-section">
     <div class="container founder-grid">
       <div class="founder-content">
         <span class="section-label">The Force Behind HYCE</span>
         <h2 class="section-title">A. Venugopal</h2>
-        <p class="section-text">
-          A. Venugopal is the sole proprietor of HYCE company, which he founded in 2005. Throughout his tenure as the leader of the company, he has established a reputation for his ability to build strong relationships with clients and partners.
-        </p>
-        <p class="section-text" style="margin-top: 16px;">
-          His dedication to helping his clients and partners succeed has made him a respected figure in the industry, and he continues to set an example for others to follow. Whether you are a small startup or a large corporation, HYCE is a company that you can count on to help you achieve your goals.
-        </p>
+        <p class="section-text">Founded HYCE in 2005 and built a reputation for strong client relationships and delivering excellence. His dedication has made him a respected figure in the construction industry.</p>
       </div>
       <div class="founder-image">
         <div class="founder-img-wrapper">
-          <img src="/images/team/founder.jpg" alt="A. Venugopal - Founder of HYCE Engineers & Infra" loading="lazy" />
+          <img src="/images/team/founder.jpg" alt="A. Venugopal - Founder" loading="lazy" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- CTA -->
   <section class="cta-section">
     <div class="container cta-content">
       <h2>Ready to Start Your Project?</h2>
-      <p>Let's build something extraordinary together. Get in touch with our team today.</p>
+      <p>Let's build something extraordinary together.</p>
       <div class="cta-actions">
         <a href="/contact/" class="btn btn-white">Contact Us</a>
-        <a href="tel:04048576723" class="btn btn-outline" style="border-color: white; color: white;">Call: 040-48576723</a>
+        <a href="tel:04048576723" class="btn btn-outline" style="border-color: white; color: white;">Call Now</a>
       </div>
     </div>
   </section>
@@ -168,7 +138,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .hero {
     position: relative;
     height: 100vh;
-    min-height: 700px;
+    min-height: 600px;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -178,138 +148,180 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(10, 14, 39, 0.85) 0%, rgba(10, 14, 39, 0.5) 100%);
+    background: linear-gradient(160deg, rgba(10, 14, 39, 0.92) 0%, rgba(10, 14, 39, 0.55) 100%);
     z-index: 2;
   }
 
-  .hero-slides {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-  }
-
-  .hero-slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 1.2s ease;
-  }
-
-  .hero-slide.active {
-    opacity: 1;
-  }
-
-  .hero-bg {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-color: var(--color-navy-light);
-  }
+  .hero-slides { position: absolute; inset: 0; z-index: 1; }
+  .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease; }
+  .hero-slide.active { opacity: 1; }
+  .hero-bg { width: 100%; height: 100%; background-size: cover; background-position: center; background-color: var(--color-navy-light); }
 
   .hero-content {
     position: relative;
     z-index: 3;
-    max-width: 700px;
+    max-width: 640px;
+  }
+
+  .hero-top-line {
+    width: 48px;
+    height: 3px;
+    background: var(--color-gold);
+    margin-bottom: 24px;
   }
 
   .hero-badge {
     display: inline-block;
-    padding: 8px 20px;
-    border: 1px solid rgba(201, 168, 76, 0.4);
-    color: var(--color-gold);
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 2px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    margin-bottom: 24px;
+    color: var(--color-gold);
+    margin-bottom: 16px;
   }
 
   .hero-title {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(2.4rem, 5.5vw, 4.2rem);
     color: var(--color-white);
     font-weight: 700;
-    margin-bottom: 24px;
-    line-height: 1.1;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+
+  .gold-text {
+    color: var(--color-gold);
   }
 
   .hero-text {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.8;
-    margin-bottom: 36px;
-    max-width: 540px;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+    margin-bottom: 28px;
+    max-width: 480px;
   }
 
   .hero-actions {
     display: flex;
+    align-items: center;
     gap: 16px;
-    flex-wrap: wrap;
+    margin-bottom: 48px;
   }
 
-  .hero-scroll {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
+  .hero-btn-primary {
+    display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.75rem;
-    letter-spacing: 2px;
+    padding: 13px 28px;
+    background: var(--color-gold);
+    color: var(--color-navy);
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
+    transition: all 0.3s ease;
   }
 
-  .scroll-line {
+  .hero-btn-primary svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  .hero-btn-primary:hover {
+    background: var(--color-gold-light);
+    transform: translateY(-2px);
+  }
+
+  .hero-btn-primary:hover svg {
+    transform: translateX(4px);
+  }
+
+  .hero-btn-ghost {
+    padding: 13px 24px;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .hero-btn-ghost:hover {
+    color: var(--color-gold);
+    border-color: var(--color-gold);
+  }
+
+  .hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .hero-stat strong {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+  }
+
+  .hero-stat span {
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .hero-stat-divider {
     width: 1px;
-    height: 40px;
-    background: linear-gradient(to bottom, var(--color-gold), transparent);
-    animation: scrollPulse 2s ease infinite;
-  }
-
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 0.3; transform: scaleY(0.7); }
-    50% { opacity: 1; transform: scaleY(1); }
+    height: 36px;
+    background: rgba(255, 255, 255, 0.12);
   }
 
   .hero-dots {
     position: absolute;
-    right: 40px;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 3;
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    gap: 8px;
   }
 
   .hero-dot {
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    background: transparent;
+    border: none;
+    background: rgba(255, 255, 255, 0.25);
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    padding: 0;
   }
 
   .hero-dot.active {
-    border-color: var(--color-gold);
     background: var(--color-gold);
+    width: 24px;
+    border-radius: 4px;
   }
 
-  /* ===== SERVICES OVERVIEW ===== */
+  /* ===== SERVICES ===== */
   .services-overview {
     padding: var(--section-padding);
     background: var(--color-white);
   }
 
   .services-header {
-    text-align: center;
-    margin-bottom: 64px;
+    margin-bottom: 48px;
   }
 
   .services-header .section-text {
@@ -317,46 +329,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--color-gray-200);
+    border: 1px solid var(--color-gray-200);
   }
 
   .service-card {
-    padding: 40px 28px;
-    border: 1px solid var(--color-gray-200);
-    text-align: center;
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .service-card::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--color-gold);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
+    background: var(--color-white);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
   }
 
   .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-  }
-
-  .service-card:hover::before {
-    transform: scaleX(1);
+    background: var(--color-gray-100);
+    padding-left: 32px;
   }
 
   .service-icon {
-    width: 56px;
-    height: 56px;
-    margin: 0 auto 20px;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
     color: var(--color-gold);
+    padding: 8px;
+    border: 1px solid rgba(201, 168, 76, 0.25);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .service-card:hover .service-icon {
+    background: var(--color-gold);
+    color: var(--color-navy);
+    border-color: var(--color-gold);
   }
 
   .service-icon svg {
@@ -364,21 +374,34 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     height: 100%;
   }
 
-  .service-card h3 {
-    font-size: 1.15rem;
+  .service-text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .service-text h3 {
+    font-size: 1rem;
     color: var(--color-navy);
-    margin-bottom: 12px;
+    margin-bottom: 2px;
   }
 
-  .service-card p {
-    font-size: 0.9rem;
+  .service-text p {
+    font-size: 0.82rem;
     color: var(--color-gray-600);
-    line-height: 1.6;
+    line-height: 1.4;
   }
 
-  .services-actions {
-    text-align: center;
-    margin-top: 48px;
+  .service-arrow {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: var(--color-gray-300);
+    transition: all 0.3s ease;
+  }
+
+  .service-card:hover .service-arrow {
+    color: var(--color-gold);
+    transform: translateX(4px);
   }
 
   /* ===== COMPANY PROFILE ===== */
@@ -394,81 +417,39 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     align-items: center;
   }
 
-  .profile-image {
-    position: relative;
-  }
+  .profile-image { position: relative; }
 
   .profile-img-wrapper {
     width: 100%;
     aspect-ratio: 4/3;
-    background: var(--color-gray-200);
     overflow: hidden;
+    background: var(--color-gray-200);
   }
 
-  .profile-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .founder-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-  }
+  .profile-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
 
   .profile-exp {
     position: absolute;
-    bottom: -24px;
-    right: -24px;
+    bottom: -20px;
+    right: -20px;
     background: var(--color-gold);
     color: var(--color-navy);
-    padding: 28px;
+    padding: 20px;
     text-align: center;
   }
 
-  .exp-number {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1;
-  }
-
-  .exp-text {
-    display: block;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 4px;
-  }
+  .exp-number { display: block; font-family: var(--font-heading); font-size: 2rem; font-weight: 700; line-height: 1; }
+  .exp-text { display: block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
 
   .profile-highlights {
     display: flex;
-    gap: 32px;
-    margin: 32px 0;
+    gap: 28px;
+    margin: 28px 0;
   }
 
-  .highlight {
-    text-align: center;
-  }
-
-  .highlight-number {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-gold);
-  }
-
-  .highlight-label {
-    display: block;
-    font-size: 0.8rem;
-    color: var(--color-gray-600);
-    margin-top: 4px;
-  }
+  .highlight { text-align: center; }
+  .highlight-number { display: block; font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: var(--color-gold); }
+  .highlight-label { display: block; font-size: 0.72rem; color: var(--color-gray-600); margin-top: 2px; text-transform: uppercase; letter-spacing: 1px; }
 
   /* ===== FOUNDER ===== */
   .founder-section {
@@ -483,13 +464,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     align-items: center;
   }
 
-  .founder-content .section-title {
-    color: var(--color-white);
-  }
-
-  .founder-content .section-text {
-    color: rgba(255, 255, 255, 0.6);
-  }
+  .founder-content .section-title { color: var(--color-white); }
+  .founder-content .section-text { color: rgba(255, 255, 255, 0.55); }
 
   .founder-img-wrapper {
     width: 100%;
@@ -497,288 +473,146 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     overflow: hidden;
   }
 
+  .founder-img-wrapper img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+
   /* ===== CTA ===== */
   .cta-section {
-    padding: 80px 0;
+    padding: 72px 0;
     background: linear-gradient(135deg, var(--color-gold-dark) 0%, var(--color-gold) 100%);
     text-align: center;
   }
 
-  .cta-content h2 {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    color: var(--color-navy);
-    margin-bottom: 16px;
-  }
-
-  .cta-content p {
-    font-size: 1.1rem;
-    color: rgba(10, 14, 39, 0.7);
-    margin-bottom: 32px;
-  }
-
-  .cta-actions {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  .cta-content h2 { font-size: clamp(1.5rem, 3.5vw, 2.2rem); color: var(--color-navy); margin-bottom: 12px; }
+  .cta-content p { font-size: 0.95rem; color: rgba(10, 14, 39, 0.6); margin-bottom: 28px; }
+  .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
   /* ===== RESPONSIVE ===== */
-
-  /* Tablet landscape */
   @media (max-width: 1024px) {
-    .hero {
-      min-height: 600px;
-    }
-
-    .hero-title {
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-    }
-
-    .profile-grid,
-    .founder-grid {
-      gap: 40px;
-    }
-
-    .services-header {
-      margin-bottom: 48px;
-    }
-
-    .services-grid {
-      gap: 24px;
-    }
-
-    .service-card {
-      padding: 32px 20px;
-    }
-
-    .profile-exp {
-      bottom: -16px;
-      right: -16px;
-      padding: 20px;
-    }
-
-    .exp-number {
-      font-size: 2rem;
-    }
-
-    .cta-section {
-      padding: 60px 0;
-    }
+    .hero { min-height: 560px; }
+    .profile-grid, .founder-grid { gap: 40px; }
+    .profile-exp { bottom: -12px; right: -12px; padding: 16px; }
+    .exp-number { font-size: 1.6rem; }
   }
 
-  /* Tablet portrait */
   @media (max-width: 768px) {
     .hero {
-      min-height: auto;
       height: auto;
-      padding: 100px 0 60px;
+      min-height: auto;
+      padding: 90px 0 40px;
     }
 
-    .profile-grid,
-    .founder-grid {
-      grid-template-columns: 1fr;
-      gap: 32px;
+    .hero-overlay {
+      background: linear-gradient(180deg, rgba(10, 14, 39, 0.88) 0%, rgba(10, 14, 39, 0.7) 100%);
     }
 
-    .hero-dots,
-    .hero-scroll {
-      display: none;
-    }
+    .hero-top-line { width: 32px; height: 2px; margin-bottom: 16px; }
+    .hero-badge { font-size: 0.6rem; letter-spacing: 2.5px; margin-bottom: 12px; }
 
     .hero-title {
       font-size: 2rem;
-      margin-bottom: 16px;
-    }
-
-    .hero-text {
-      font-size: 0.9rem;
-      margin-bottom: 24px;
-      line-height: 1.6;
-    }
-
-    .hero-badge {
-      font-size: 0.65rem;
-      padding: 5px 12px;
-      margin-bottom: 16px;
-      letter-spacing: 1.5px;
-    }
-
-    .hero-actions {
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .services-overview {
-      padding: 48px 0;
-    }
-
-    .services-header {
-      margin-bottom: 32px;
-    }
-
-    .services-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .service-card {
-      padding: 20px 14px;
-    }
-
-    .service-icon {
-      width: 36px;
-      height: 36px;
-      margin-bottom: 12px;
-    }
-
-    .service-card h3 {
-      font-size: 0.9rem;
-      margin-bottom: 8px;
-    }
-
-    .service-card p {
-      font-size: 0.78rem;
-      line-height: 1.5;
-    }
-
-    .service-card:hover {
-      transform: none;
-    }
-
-    .services-actions {
-      margin-top: 28px;
-    }
-
-    .company-profile {
-      padding: 48px 0;
-    }
-
-    .profile-img-wrapper {
-      aspect-ratio: 16/9;
-    }
-
-    .profile-exp {
-      position: static;
-      display: inline-block;
-      margin-top: 12px;
-      padding: 14px 20px;
-    }
-
-    .exp-number {
-      font-size: 1.6rem;
-    }
-
-    .exp-text {
-      font-size: 0.7rem;
-    }
-
-    .profile-highlights {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin: 24px 0;
-    }
-
-    .highlight-number {
-      font-size: 1.4rem;
-    }
-
-    .highlight-label {
-      font-size: 0.7rem;
-    }
-
-    .founder-section {
-      padding: 48px 0;
-    }
-
-    .founder-img-wrapper {
-      aspect-ratio: 1/1;
-      max-width: 250px;
-      margin: 0 auto;
-      border-radius: 50%;
-      overflow: hidden;
-    }
-
-    .founder-content .section-text {
-      font-size: 0.85rem;
-    }
-
-    .cta-section {
-      padding: 40px 0;
-    }
-
-    .cta-content h2 {
-      font-size: 1.4rem;
-    }
-
-    .cta-content p {
-      font-size: 0.85rem;
-      margin-bottom: 20px;
-    }
-
-    .cta-actions {
-      flex-direction: column;
-      align-items: stretch;
-    }
-  }
-
-  /* Small phones */
-  @media (max-width: 480px) {
-    .hero {
-      padding: 80px 0 48px;
-    }
-
-    .hero-title {
-      font-size: 1.6rem;
+      margin-bottom: 14px;
     }
 
     .hero-text {
       font-size: 0.82rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: rgba(255, 255, 255, 0.5);
     }
+
+    .hero-actions {
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .hero-btn-primary {
+      padding: 11px 20px;
+      font-size: 0.72rem;
+    }
+
+    .hero-btn-primary svg { width: 14px; height: 14px; }
+
+    .hero-btn-ghost {
+      padding: 11px 16px;
+      font-size: 0.72rem;
+    }
+
+    .hero-stats { gap: 16px; }
+    .hero-stat strong { font-size: 1.2rem; }
+    .hero-stat span { font-size: 0.6rem; letter-spacing: 1px; }
+    .hero-stat-divider { height: 28px; }
+
+    .hero-dots { bottom: 16px; }
+
+    .services-overview { padding: 40px 0; }
+    .services-header { margin-bottom: 24px; }
 
     .services-grid {
-      grid-template-columns: 1fr;
-      gap: 10px;
+      border-radius: 12px;
+      overflow: hidden;
     }
 
-    .service-card {
-      display: flex;
-      flex-direction: row;
+    .service-card { padding: 16px; gap: 14px; }
+    .service-card:hover { padding-left: 16px; }
+    .service-icon { width: 36px; height: 36px; padding: 6px; border-radius: 6px; }
+    .service-text h3 { font-size: 0.88rem; }
+    .service-text p { font-size: 0.75rem; }
+    .service-arrow { display: none; }
+
+    .company-profile { padding: 40px 0; }
+    .profile-grid, .founder-grid { grid-template-columns: 1fr; gap: 24px; }
+
+    .profile-img-wrapper { aspect-ratio: 16/9; border-radius: 8px; overflow: hidden; }
+
+    .profile-exp {
+      position: static;
+      display: inline-flex;
       align-items: center;
-      gap: 14px;
-      text-align: left;
-      padding: 16px;
-    }
-
-    .service-icon {
-      width: 40px;
-      height: 40px;
-      margin: 0;
-      flex-shrink: 0;
-    }
-
-    .service-card p {
-      display: none;
-    }
-
-    .service-card h3 {
-      margin-bottom: 0;
-      font-size: 0.9rem;
-    }
-
-    .profile-highlights {
-      grid-template-columns: repeat(3, 1fr);
       gap: 8px;
+      margin-top: 12px;
+      padding: 10px 16px;
     }
 
-    .highlight-number {
-      font-size: 1.2rem;
-    }
+    .exp-number { font-size: 1.3rem; }
+    .exp-text { font-size: 0.65rem; margin-top: 0; }
+
+    .profile-highlights { gap: 16px; margin: 20px 0; }
+    .highlight-number { font-size: 1.4rem; }
+    .highlight-label { font-size: 0.6rem; }
+
+    .founder-section { padding: 40px 0; }
 
     .founder-img-wrapper {
-      max-width: 200px;
+      aspect-ratio: 1/1;
+      max-width: 180px;
+      margin: 0 auto;
+      border-radius: 50%;
     }
+
+    .founder-content .section-text { font-size: 0.82rem; }
+
+    .cta-section { padding: 36px 0; }
+    .cta-content h2 { font-size: 1.3rem; }
+    .cta-content p { font-size: 0.82rem; margin-bottom: 20px; }
+    .cta-actions { flex-direction: column; align-items: stretch; }
+  }
+
+  @media (max-width: 480px) {
+    .hero { padding: 80px 0 32px; }
+    .hero-title { font-size: 1.7rem; }
+    .hero-text { font-size: 0.78rem; }
+
+    .hero-stats { gap: 12px; }
+    .hero-stat strong { font-size: 1.05rem; }
+    .hero-stat span { font-size: 0.55rem; }
+    .hero-stat-divider { height: 24px; }
+
+    .service-card { padding: 14px; gap: 12px; }
+    .service-icon { width: 32px; height: 32px; padding: 5px; }
+    .service-text h3 { font-size: 0.82rem; }
+    .service-text p { display: none; }
+
+    .founder-img-wrapper { max-width: 150px; }
   }
 </style>
 
