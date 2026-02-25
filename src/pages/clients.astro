@@ -354,152 +354,39 @@ const pmcs = [
     margin-bottom: 32px;
   }
 
-  /* Tablet landscape */
-  @media (max-width: 1024px) {
-    .page-banner {
-      height: 350px;
-    }
-
-    .clients-grid {
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 20px;
-    }
-
-    .client-card {
-      padding: 32px 20px;
-    }
-
-    .stats-section {
-      padding: 60px 0;
-    }
-
-    .cta-section {
-      padding: 60px 0;
-    }
-  }
-
-  /* Tablet portrait */
+  /* Mobile-first: 768px */
   @media (max-width: 768px) {
-    .page-banner {
-      height: 300px;
-    }
-
-    .banner-content h1 {
-      font-size: 2.2rem;
-    }
-
-    .clients-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .client-card {
-      padding: 24px 16px;
-    }
-
-    .client-logo-placeholder {
-      width: 48px;
-      height: 48px;
-    }
-
-    .client-name {
-      font-size: 0.8rem;
-    }
-
-    .stats-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .pmc-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .pmc-card {
-      padding: 24px 16px;
-    }
-
-    .cta-section {
-      padding: 48px 0;
-    }
+    .page-banner { height: auto; padding: 100px 0 40px; }
+    .banner-content h1 { font-size: 1.8rem; }
+    .banner-content p { font-size: 0.85rem; }
+    .clients-intro, .stats-section, .cta-section { padding: 40px 0; }
+    .clients-section { padding: 0 0 40px; }
+    .clients-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .client-card { padding: 20px; transform: none; }
+    .client-card:hover { transform: none; }
+    .client-name { font-size: 0.82rem; }
+    .pmc-section { padding: 40px 0; }
+    .pmc-grid { grid-template-columns: 1fr; gap: 16px; }
+    .pmc-card { padding: 20px; transform: none; }
+    .pmc-card:hover { transform: none; }
+    .pmc-card span { font-size: 0.82rem; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .stat-card { padding: 20px; }
+    .stat-number { font-size: 2rem; }
+    .stat-label { font-size: 0.7rem; }
+    .stat-desc { font-size: 0.82rem; }
+    .cta-content p { font-size: 0.82rem; }
   }
 
-  /* Large phones */
-  @media (max-width: 640px) {
-    .page-banner {
-      height: 260px;
-    }
-
-    .banner-content h1 {
-      font-size: 1.8rem;
-    }
-
-    .banner-content p {
-      font-size: 0.95rem;
-    }
-
-    .clients-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .client-card {
-      padding: 20px 12px;
-      gap: 12px;
-    }
-
-    .stat-number {
-      font-size: 2rem;
-    }
-
-    .stat-label {
-      font-size: 0.8rem;
-    }
-
-    .stat-desc {
-      font-size: 0.8rem;
-      display: none;
-    }
-
-    .pmc-card:hover {
-      transform: none;
-    }
-  }
-
-  /* Small phones */
+  /* Mobile-first: 480px */
   @media (max-width: 480px) {
-    .page-banner {
-      height: 220px;
-    }
-
-    .banner-content h1 {
-      font-size: 1.6rem;
-    }
-
-    .clients-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .stats-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .stat-card {
-      padding: 24px 12px;
-    }
-
-    .stat-number {
-      font-size: 1.8rem;
-    }
-
-    .pmc-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .cta-content p {
-      font-size: 0.95rem;
-    }
+    .page-banner { padding: 80px 0 32px; }
+    .banner-content h1 { font-size: 1.5rem; }
+    .client-card { padding: 20px 12px; gap: 12px; }
+    .client-logo-placeholder { width: 48px; height: 48px; }
+    .stats-grid { gap: 12px; }
+    .stat-card { padding: 20px 12px; }
+    .stat-number { font-size: 1.8rem; }
+    .stat-desc { font-size: 0.82rem; }
   }
 </style>

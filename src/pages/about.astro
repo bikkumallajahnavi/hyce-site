@@ -341,61 +341,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
   }
 
-  /* Tablet portrait */
+  /* Tablet + phones */
   @media (max-width: 768px) {
     .page-banner {
-      height: 300px;
-    }
-
-    .banner-content h1 {
-      font-size: 2.2rem;
-    }
-
-    .intro-grid,
-    .founder-grid {
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-
-    .stats-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .stat-card {
-      padding: 28px 16px;
-    }
-
-    .stat-number {
-      font-size: 2.2rem;
-    }
-
-    .stat-plus {
-      font-size: 1.5rem;
-    }
-
-    .stat-label {
-      font-size: 0.85rem;
-    }
-
-    .values-grid {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    .value-card {
-      padding: 28px;
-    }
-
-    .founder-image {
-      aspect-ratio: 16/9;
-    }
-  }
-
-  /* Large phones */
-  @media (max-width: 640px) {
-    .page-banner {
-      height: 260px;
+      height: auto;
+      padding: 100px 0 40px;
     }
 
     .banner-content h1 {
@@ -403,7 +353,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     .banner-content p {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
+    }
+
+    .intro-grid,
+    .founder-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
     }
 
     .intro-image {
@@ -411,49 +367,105 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     .stats-section {
-      padding: 48px 0;
-    }
-
-    .stat-desc {
-      font-size: 0.8rem;
-      display: none;
-    }
-
-    .value-number {
-      font-size: 2.2rem;
-    }
-  }
-
-  /* Small phones */
-  @media (max-width: 480px) {
-    .page-banner {
-      height: 220px;
-    }
-
-    .banner-content h1 {
-      font-size: 1.6rem;
+      padding: 40px 0;
     }
 
     .stats-grid {
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+      gap: 10px;
     }
 
     .stat-card {
       padding: 20px 12px;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .stat-card:hover {
+      transform: none;
     }
 
     .stat-number {
       font-size: 1.8rem;
     }
 
+    .stat-plus {
+      font-size: 1.2rem;
+    }
+
     .stat-label {
+      font-size: 0.7rem;
+      margin: 4px 0 8px;
+    }
+
+    .stat-desc {
       font-size: 0.75rem;
-      letter-spacing: 0.5px;
+      display: none;
+    }
+
+    .values-section {
+      padding: 40px 0;
+    }
+
+    .values-header {
+      margin-bottom: 28px;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
     }
 
     .value-card {
-      padding: 24px 20px;
+      padding: 20px;
+    }
+
+    .value-card:hover {
+      transform: none;
+    }
+
+    .value-number {
+      font-size: 2rem;
+      margin-bottom: 4px;
+    }
+
+    .value-card h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .value-card p {
+      font-size: 0.82rem;
+    }
+
+    .founder-section {
+      padding: 40px 0;
+    }
+
+    .founder-image {
+      aspect-ratio: 1/1;
+      max-width: 200px;
+      margin: 0 auto;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .founder-image img {
+      object-position: top center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .banner-content h1 {
+      font-size: 1.5rem;
+    }
+
+    .stat-number {
+      font-size: 1.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
     }
   }
 </style>

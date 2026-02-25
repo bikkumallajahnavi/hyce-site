@@ -314,101 +314,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--color-gray-300);
   }
 
-  /* Tablet landscape */
-  @media (max-width: 1024px) {
-    .page-banner {
-      height: 350px;
-    }
-
-    .contact-grid {
-      gap: 40px;
-    }
-  }
-
-  /* Tablet portrait */
+  /* Mobile-first: 768px */
   @media (max-width: 768px) {
-    .page-banner {
-      height: 300px;
-    }
-
-    .banner-content h1 {
-      font-size: 2.2rem;
-    }
-
-    .contact-grid {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-
-    .contact-form {
-      grid-template-columns: 1fr;
-    }
-
-    .info-card {
-      padding: 20px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      padding: 16px;
-      font-size: 16px;
-    }
+    .page-banner { height: auto; padding: 100px 0 40px; }
+    .banner-content h1 { font-size: 1.8rem; }
+    .banner-content p { font-size: 0.85rem; }
+    .contact-section { padding: 40px 0; }
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contact-form { grid-template-columns: 1fr; }
+    .info-card { padding: 20px; transform: none; }
+    .info-card:hover { transform: none; }
+    .info-card p { font-size: 0.82rem; }
+    .form-group label { font-size: 0.7rem; }
+    .form-group input, .form-group textarea { font-size: 16px; padding: 14px 16px; }
+    .map-placeholder { aspect-ratio: 16/9; height: auto; min-height: 200px; }
   }
 
-  /* Large phones */
-  @media (max-width: 640px) {
-    .page-banner {
-      height: 260px;
-    }
-
-    .banner-content h1 {
-      font-size: 1.8rem;
-    }
-
-    .banner-content p {
-      font-size: 0.95rem;
-    }
-
-    .info-card:hover {
-      transform: none;
-    }
-
-    .map-placeholder {
-      height: 220px;
-    }
-  }
-
-  /* Small phones */
+  /* Mobile-first: 480px */
   @media (max-width: 480px) {
-    .page-banner {
-      height: 220px;
-    }
-
-    .banner-content h1 {
-      font-size: 1.6rem;
-    }
-
-    .info-card {
-      padding: 16px;
-      gap: 14px;
-    }
-
-    .info-icon {
-      width: 36px;
-      height: 36px;
-    }
-
-    .info-card h4 {
-      font-size: 0.85rem;
-    }
-
-    .info-card p {
-      font-size: 0.85rem;
-    }
-
-    .map-placeholder {
-      height: 180px;
-    }
+    .page-banner { padding: 80px 0 32px; }
+    .banner-content h1 { font-size: 1.5rem; }
+    .info-card { padding: 20px; gap: 14px; }
+    .info-icon { width: 36px; height: 36px; }
+    .info-card h4 { font-size: 0.82rem; }
+    .info-card p { font-size: 0.82rem; }
+    .form-group label { font-size: 0.7rem; }
   }
 </style>
 

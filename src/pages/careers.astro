@@ -367,131 +367,34 @@ const benefits = [
     line-height: 1.6;
   }
 
-  /* Tablet landscape */
-  @media (max-width: 1024px) {
-    .page-banner {
-      height: 350px;
-    }
-
-    .intro-grid {
-      gap: 40px;
-    }
-
-    .application-grid {
-      gap: 40px;
-    }
-
-    .benefit-card {
-      padding: 32px;
-    }
-
-    .application-form {
-      padding: 32px;
-    }
-  }
-
-  /* Tablet portrait */
+  /* Mobile-first: 768px */
   @media (max-width: 768px) {
-    .page-banner {
-      height: 300px;
-    }
-
-    .banner-content h1 {
-      font-size: 2.2rem;
-    }
-
-    .intro-grid,
-    .application-grid {
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-
-    .benefits-grid {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    .benefit-card {
-      padding: 28px;
-    }
-
-    .application-form {
-      grid-template-columns: 1fr;
-      padding: 28px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      padding: 16px;
-      font-size: 16px;
-    }
-
-    .positions li {
-      min-height: 44px;
-      padding: 6px 0;
-    }
-
-    .intro-image {
-      aspect-ratio: 16/9;
-    }
+    .page-banner { height: auto; padding: 100px 0 40px; }
+    .banner-content h1 { font-size: 1.8rem; }
+    .banner-content p { font-size: 0.85rem; }
+    .careers-intro, .benefits-section, .application-section { padding: 40px 0; }
+    .intro-grid, .application-grid { grid-template-columns: 1fr; gap: 40px; }
+    .intro-image { aspect-ratio: 16/9; }
+    .benefits-grid { grid-template-columns: 1fr; gap: 20px; }
+    .benefit-card { padding: 20px; transform: none; }
+    .benefit-card:hover { transform: none; }
+    .benefit-card h3 { font-size: 1.05rem; }
+    .benefit-card p { font-size: 0.82rem; }
+    .application-form { grid-template-columns: 1fr; padding: 20px; }
+    .form-group label { font-size: 0.7rem; }
+    .form-group input, .form-group textarea { font-size: 16px; padding: 14px 16px; }
+    .positions li { font-size: 0.82rem; }
+    .form-success { padding: 40px 20px; }
   }
 
-  /* Large phones */
-  @media (max-width: 640px) {
-    .page-banner {
-      height: 260px;
-    }
-
-    .banner-content h1 {
-      font-size: 1.8rem;
-    }
-
-    .banner-content p {
-      font-size: 0.95rem;
-    }
-
-    .benefit-card {
-      padding: 24px;
-    }
-
-    .benefit-number {
-      font-size: 2rem;
-    }
-
-    .benefit-card h3 {
-      font-size: 1.05rem;
-    }
-
-    .application-form {
-      padding: 24px;
-    }
-
-    .positions li {
-      font-size: 0.85rem;
-    }
-  }
-
-  /* Small phones */
+  /* Mobile-first: 480px */
   @media (max-width: 480px) {
-    .page-banner {
-      height: 220px;
-    }
-
-    .banner-content h1 {
-      font-size: 1.6rem;
-    }
-
-    .benefit-card {
-      padding: 20px;
-    }
-
-    .application-form {
-      padding: 20px;
-    }
-
-    .form-success {
-      padding: 32px 20px;
-    }
+    .page-banner { padding: 80px 0 32px; }
+    .banner-content h1 { font-size: 1.5rem; }
+    .benefit-card { padding: 20px; }
+    .benefit-number { font-size: 2rem; }
+    .application-form { padding: 20px; }
+    .form-success { padding: 32px 20px; }
   }
 </style>
 

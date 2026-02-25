@@ -287,62 +287,11 @@ const services = [
     }
   }
 
-  /* Tablet portrait */
+  /* Tablet + phones */
   @media (max-width: 768px) {
     .page-banner {
-      height: 300px;
-    }
-
-    .banner-content h1 {
-      font-size: 2.2rem;
-    }
-
-    .service-row {
-      grid-template-columns: 1fr;
-      gap: 24px;
-      margin-bottom: 48px;
-    }
-
-    .service-row.reverse {
-      direction: ltr;
-    }
-
-    .service-index {
-      top: -12px;
-      left: -8px;
-      width: 44px;
-      height: 44px;
-      font-size: 1rem;
-    }
-
-    .service-row.reverse .service-index {
-      left: -8px;
-      right: auto;
-    }
-
-    .service-info h3 {
-      font-size: 1.3rem;
-    }
-
-    .feature-list {
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
-
-    .feature-list li {
-      min-height: 44px;
-      padding: 4px 0;
-    }
-
-    .cta-section {
-      padding: 48px 0;
-    }
-  }
-
-  /* Large phones */
-  @media (max-width: 640px) {
-    .page-banner {
-      height: 260px;
+      height: auto;
+      padding: 100px 0 40px;
     }
 
     .banner-content h1 {
@@ -350,52 +299,93 @@ const services = [
     }
 
     .banner-content p {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
+    }
+
+    .services-intro {
+      padding: 36px 0;
+    }
+
+    .service-row {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-bottom: 36px;
+    }
+
+    .service-row.reverse {
+      direction: ltr;
     }
 
     .service-image {
       aspect-ratio: 16/9;
     }
 
-    .service-info p {
-      font-size: 0.9rem;
-      margin-bottom: 16px;
-    }
-
-    .feature-list li {
+    .service-index {
+      top: -10px;
+      left: -6px;
+      width: 36px;
+      height: 36px;
       font-size: 0.85rem;
     }
 
-    .cta-content p {
-      font-size: 0.95rem;
-    }
-  }
-
-  /* Small phones */
-  @media (max-width: 480px) {
-    .page-banner {
-      height: 220px;
-    }
-
-    .banner-content h1 {
-      font-size: 1.6rem;
-    }
-
-    .services-detail {
-      padding: 0 0 48px;
-    }
-
-    .service-row {
-      margin-bottom: 40px;
+    .service-row.reverse .service-index {
+      left: -6px;
+      right: auto;
     }
 
     .service-info h3 {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
     }
 
-    .placeholder-img svg {
-      width: 40px;
-      height: 40px;
+    .service-info p {
+      font-size: 0.82rem;
+      margin-bottom: 14px;
+    }
+
+    .feature-list {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+
+    .feature-list li {
+      font-size: 0.8rem;
+      min-height: 36px;
+    }
+
+    .feature-list svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .pmc-section {
+      padding: 40px 0;
+    }
+
+    .cta-section {
+      padding: 36px 0;
+    }
+
+    .cta-content h2 {
+      font-size: 1.3rem;
+    }
+
+    .cta-content p {
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+    }
+
+    .services-detail {
+      padding: 0 0 36px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .banner-content h1 {
+      font-size: 1.5rem;
+    }
+
+    .service-info h3 {
+      font-size: 1.05rem;
     }
   }
 </style>

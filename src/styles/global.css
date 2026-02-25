@@ -157,57 +157,63 @@ img {
 /* Tablet portrait */
 @media (max-width: 768px) {
   :root {
-    --section-padding: 60px 0;
+    --section-padding: 56px 0;
   }
 
   .section-label {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-size: clamp(1.4rem, 5vw, 2rem);
+    margin-bottom: 16px;
   }
 
   .section-text {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.7;
   }
 
   .btn {
-    padding: 14px 28px;
-    font-size: 0.85rem;
-    min-height: 48px;
+    padding: 12px 24px;
+    font-size: 0.8rem;
+    min-height: 44px;
     justify-content: center;
   }
 }
 
-/* Large phones */
+/* Phones */
 @media (max-width: 640px) {
   .container {
     padding: 0 16px;
   }
 
   :root {
-    --section-padding: 48px 0;
+    --section-padding: 40px 0;
   }
 
   .section-title {
-    margin-bottom: 16px;
+    font-size: clamp(1.3rem, 5vw, 1.7rem);
+    margin-bottom: 12px;
   }
 
   .section-text {
-    font-size: 0.95rem;
-    line-height: 1.7;
-  }
-}
-
-/* Small phones */
-@media (max-width: 480px) {
-  .btn {
-    padding: 12px 24px;
-    font-size: 0.8rem;
-    width: 100%;
-    justify-content: center;
+    font-size: 0.85rem;
+    line-height: 1.6;
   }
 
   .section-label {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     letter-spacing: 1.5px;
+    margin-bottom: 6px;
+  }
+
+  .btn {
+    padding: 11px 20px;
+    font-size: 0.78rem;
+    width: 100%;
+    justify-content: center;
   }
 }
