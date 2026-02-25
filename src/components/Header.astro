@@ -1,0 +1,332 @@
+---
+const currentPath = Astro.url.pathname;
+const navItems = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about/' },
+  { label: 'Works', href: '/previous-work/', children: [
+    { label: 'Previous Work', href: '/previous-work/' },
+    { label: 'Clients', href: '/clients/' },
+  ]},
+  { label: 'Services', href: '/services/' },
+  { label: 'Careers', href: '/careers/' },
+  { label: 'Contact', href: '/contact/' },
+];
+---
+
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      <img src="/images/hyce-logo.png" alt="HYCE Engineers & Infra" />
+    </a>
+    <nav class="main-nav" id="main-nav">
+      {navItems.map(item => (
+        item.children ? (
+          <div class="nav-dropdown">
+            <a
+              href={item.href}
+              class:list={['nav-link', { active: currentPath === item.href || item.children.some(c => currentPath === c.href) }]}
+            >
+              {item.label}
+              <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="dropdown-menu">
+              {item.children.map(child => (
+                <a href={child.href} class:list={['dropdown-link', { active: currentPath === child.href }]}>{child.label}</a>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <a
+            href={item.href}
+            class:list={['nav-link', { active: currentPath === item.href }]}
+          >
+            {item.label}
+          </a>
+        )
+      ))}
+      <a href="/contact/" class="btn btn-primary nav-cta">Get a Quote</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 16px 0;
+    transition: all 0.4s ease;
+    background: transparent;
+  }
+
+  .site-header.scrolled {
+    background: rgba(10, 14, 39, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 10px 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo img {
+    height: 50px;
+    width: auto;
+  }
+
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.5px;
+    position: relative;
+    padding: 4px 0;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-gold);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--color-gold);
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  .nav-cta {
+    padding: 10px 24px;
+    font-size: 0.8rem;
+    min-height: 44px;
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-white);
+    transition: var(--transition);
+  }
+
+  .nav-dropdown {
+    position: relative;
+  }
+
+  .nav-dropdown .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .dropdown-arrow {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.2s ease;
+  }
+
+  .nav-dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background: rgba(10, 14, 39, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: all 0.25s ease;
+    margin-top: 12px;
+  }
+
+  .nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown-link {
+    display: block;
+    padding: 12px 20px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.2s ease;
+    min-height: 44px;
+  }
+
+  .dropdown-link:hover,
+  .dropdown-link.active {
+    color: var(--color-gold);
+    background: rgba(201, 168, 76, 0.08);
+  }
+
+  /* Tablet landscape — tighten nav spacing */
+  @media (max-width: 1024px) {
+    .main-nav {
+      gap: 20px;
+    }
+
+    .nav-link {
+      font-size: 0.85rem;
+    }
+
+    .nav-cta {
+      padding: 8px 16px;
+      font-size: 0.75rem;
+    }
+
+    .logo img {
+      height: 44px;
+    }
+  }
+
+  /* Tablet portrait + phones — hamburger menu */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex;
+    }
+
+    .main-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 280px;
+      height: 100vh;
+      height: 100dvh;
+      background: var(--color-navy);
+      flex-direction: column;
+      padding: 80px 32px 32px;
+      gap: 20px;
+      transition: right 0.3s ease;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .main-nav.open {
+      right: 0;
+    }
+
+    .nav-link {
+      font-size: 1rem;
+      padding: 8px 0;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+
+    .dropdown-menu {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      margin-top: 4px;
+      padding-left: 16px;
+      background: transparent;
+      backdrop-filter: none;
+    }
+
+    .dropdown-link {
+      padding: 10px 16px;
+      font-size: 0.95rem;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-cta {
+      margin-top: 12px;
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+      padding: 14px 24px;
+      font-size: 0.85rem;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+  }
+
+  /* Small phones */
+  @media (max-width: 480px) {
+    .main-nav {
+      width: calc(100vw - 48px);
+      max-width: 280px;
+      padding: 72px 24px 24px;
+      gap: 16px;
+    }
+
+    .logo img {
+      height: 36px;
+    }
+
+    .site-header {
+      padding: 12px 0;
+    }
+  }
+</style>
+
+<script>
+  const header = document.getElementById('site-header');
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('main-nav');
+
+  window.addEventListener('scroll', () => {
+    header?.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  toggle?.addEventListener('click', () => {
+    nav?.classList.toggle('open');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!nav?.contains(e.target as Node) && !toggle?.contains(e.target as Node)) {
+      nav?.classList.remove('open');
+    }
+  });
+</script>

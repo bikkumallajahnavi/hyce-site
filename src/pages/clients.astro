@@ -1,0 +1,505 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const clients = [
+  { name: 'Microsoft', logo: '' },
+  { name: 'Amazon', logo: '/images/clients/amazon.png' },
+  { name: 'Google', logo: '/images/clients/google.png' },
+  { name: 'Brigade Group', logo: '' },
+  { name: 'Indian School of Business', logo: '/images/clients/isb.png' },
+  { name: 'AIG Hospitals', logo: '/images/clients/aig.png' },
+  { name: 'CARE Hospital', logo: '/images/clients/care.png' },
+  { name: 'Capgemini', logo: '/images/clients/capgemini.png' },
+  { name: 'TATA Consultancy Services', logo: '/images/clients/tcs.png' },
+  { name: 'Virtusa', logo: '/images/clients/virtusa.png' },
+  { name: 'Salarpuria Sattva', logo: '' },
+  { name: 'Indian Immunologicals', logo: '/images/clients/indian-immunologicals.png' },
+  { name: 'Phoenix Group', logo: '/images/clients/phoenix.png' },
+  { name: 'ACE Group', logo: '/images/clients/ace.png' },
+  { name: 'Ascendus', logo: '' },
+];
+
+const pmcs = [
+  'JLL (Jones Lang LaSalle)',
+  'CBRE',
+  'Cushman & Wakefield',
+  'Colliers International',
+  'Turner Construction',
+];
+---
+
+<BaseLayout title="Clients" description="HYCE's trusted clients include Microsoft, Amazon, Google, TCS, Capgemini, Brigade Group, ISB, and leading hospitals across Hyderabad.">
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <div class="banner-overlay"></div>
+    <div class="container banner-content">
+      <span class="section-label" style="color: var(--color-gold);">Our Partners</span>
+      <h1>Clients</h1>
+      <p>Building trust with industry leaders</p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="clients-intro">
+    <div class="container">
+      <div class="intro-content">
+        <span class="section-label">Clients We Have Worked With</span>
+        <h2 class="section-title">Trusted by leading organizations across India.</h2>
+        <p class="section-text" style="max-width: 800px;">
+          We understand that it can be a lot of pressure for a company to handle the expectations of each client to be perfect. We, however, have maintained a perfect client & PMC relationship which has been one of the key factors that have contributed to our growth. Our team puts in extra effort to ensure that our clients are satisfied with our services and that their needs are met.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients Grid -->
+  <section class="clients-section">
+    <div class="container">
+      <div class="clients-grid">
+        {clients.map((client) => (
+          <div class="client-card">
+            {client.logo ? (
+              <img src={client.logo} alt={client.name} class="client-logo-img" loading="lazy" />
+            ) : (
+              <div class="client-logo-placeholder">
+                <span class="client-initial">{client.name.charAt(0)}</span>
+              </div>
+            )}
+            <span class="client-name">{client.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PMC Section -->
+  <section class="pmc-section">
+    <div class="container">
+      <div class="pmc-header">
+        <span class="section-label">Trusted Partnerships</span>
+        <h2 class="section-title" style="color: var(--color-white);">PMC's We Have Worked With</h2>
+        <p style="color: rgba(255,255,255,0.6); max-width: 700px; margin: 0 auto; line-height: 1.8; text-align: center;">
+          As a top-tier firm, we understand the importance of maintaining positive relationships with our Project Management Consultants. Our past connections have enabled us to become a force in the industry.
+        </p>
+      </div>
+      <div class="pmc-grid">
+        {pmcs.map(pmc => (
+          <div class="pmc-card">
+            <div class="pmc-logo-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 12h6M12 9v6"/></svg>
+            </div>
+            <span>{pmc}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Relationship Stats -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">Clients Served</span>
+          <p class="stat-desc">From global tech giants to premier healthcare institutions</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">98%</span>
+          <span class="stat-label">Client Retention</span>
+          <p class="stat-desc">Clients who return or refer us for their next project</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">5+</span>
+          <span class="stat-label">PMC Partners</span>
+          <p class="stat-desc">Working with the best project management consultants globally</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">18+</span>
+          <span class="stat-label">Years Together</span>
+          <p class="stat-desc">Long-standing partnerships built on trust and quality delivery</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container cta-content">
+      <h2>Want to Work With Us?</h2>
+      <p>Join our growing list of satisfied clients. Let's discuss your next project.</p>
+      <a href="/contact/" class="btn btn-white">Get in Touch</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-banner {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--color-navy);
+    overflow: hidden;
+  }
+
+  .banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
+  }
+
+  .banner-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .banner-content h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--color-white);
+    margin-bottom: 12px;
+  }
+
+  .banner-content p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.1rem;
+  }
+
+  /* ===== INTRO ===== */
+  .clients-intro {
+    padding: var(--section-padding);
+    text-align: center;
+  }
+
+  .intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .intro-content .section-text {
+    margin: 0 auto;
+  }
+
+  /* ===== CLIENTS GRID ===== */
+  .clients-section {
+    padding: 0 0 80px;
+  }
+
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 24px;
+  }
+
+  .client-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 40px 24px;
+    background: var(--color-gray-100);
+    text-align: center;
+    transition: var(--transition);
+    border-bottom: 3px solid transparent;
+  }
+
+  .client-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+    border-bottom-color: var(--color-gold);
+  }
+
+  .client-logo-img {
+    width: auto;
+    height: 48px;
+    max-width: 120px;
+    object-fit: contain;
+  }
+
+  .client-logo-placeholder {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-gray-200);
+    border-radius: 50%;
+  }
+
+  .client-initial {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-gold);
+  }
+
+  .client-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== PMC ===== */
+  .pmc-section {
+    padding: var(--section-padding);
+    background: var(--color-navy);
+    text-align: center;
+  }
+
+  .pmc-header {
+    margin-bottom: 48px;
+  }
+
+  .pmc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .pmc-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+  }
+
+  .pmc-card:hover {
+    border-color: var(--color-gold);
+    transform: translateY(-4px);
+  }
+
+  .pmc-logo-placeholder {
+    width: 48px;
+    height: 48px;
+    color: rgba(255, 255, 255, 0.2);
+  }
+
+  .pmc-logo-placeholder svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .pmc-card span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* ===== STATS ===== */
+  .stats-section {
+    padding: 80px 0;
+    background: var(--color-gray-100);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  .stat-card {
+    text-align: center;
+    padding: 32px 20px;
+  }
+
+  .stat-number {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 8px 0 12px;
+  }
+
+  .stat-desc {
+    font-size: 0.85rem;
+    color: var(--color-gray-600);
+    line-height: 1.6;
+  }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--color-gold-dark) 0%, var(--color-gold) 100%);
+    text-align: center;
+  }
+
+  .cta-content h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--color-navy);
+    margin-bottom: 16px;
+  }
+
+  .cta-content p {
+    font-size: 1.1rem;
+    color: rgba(10, 14, 39, 0.7);
+    margin-bottom: 32px;
+  }
+
+  /* Tablet landscape */
+  @media (max-width: 1024px) {
+    .page-banner {
+      height: 350px;
+    }
+
+    .clients-grid {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .client-card {
+      padding: 32px 20px;
+    }
+
+    .stats-section {
+      padding: 60px 0;
+    }
+
+    .cta-section {
+      padding: 60px 0;
+    }
+  }
+
+  /* Tablet portrait */
+  @media (max-width: 768px) {
+    .page-banner {
+      height: 300px;
+    }
+
+    .banner-content h1 {
+      font-size: 2.2rem;
+    }
+
+    .clients-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .client-card {
+      padding: 24px 16px;
+    }
+
+    .client-logo-placeholder {
+      width: 48px;
+      height: 48px;
+    }
+
+    .client-name {
+      font-size: 0.8rem;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .pmc-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .pmc-card {
+      padding: 24px 16px;
+    }
+
+    .cta-section {
+      padding: 48px 0;
+    }
+  }
+
+  /* Large phones */
+  @media (max-width: 640px) {
+    .page-banner {
+      height: 260px;
+    }
+
+    .banner-content h1 {
+      font-size: 1.8rem;
+    }
+
+    .banner-content p {
+      font-size: 0.95rem;
+    }
+
+    .clients-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .client-card {
+      padding: 20px 12px;
+      gap: 12px;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+    }
+
+    .stat-desc {
+      font-size: 0.8rem;
+      display: none;
+    }
+
+    .pmc-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Small phones */
+  @media (max-width: 480px) {
+    .page-banner {
+      height: 220px;
+    }
+
+    .banner-content h1 {
+      font-size: 1.6rem;
+    }
+
+    .clients-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .stat-card {
+      padding: 24px 12px;
+    }
+
+    .stat-number {
+      font-size: 1.8rem;
+    }
+
+    .pmc-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-content p {
+      font-size: 0.95rem;
+    }
+  }
+</style>

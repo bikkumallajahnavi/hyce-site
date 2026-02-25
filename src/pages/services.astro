@@ -1,0 +1,401 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    title: 'Civil Construction',
+    description: 'We started off as a civil construction company and grew to other services. We excel in any given project, mastering construction of buildings, commercial plants, pipe racks and connecting bridges.',
+    image: '/images/services/civil-construction.jpg',
+    features: ['Building Construction', 'Commercial Plants', 'Pipe Racks & Bridges', 'Structural Engineering'],
+  },
+  {
+    title: 'External Development',
+    description: 'We have the experience to provide a wide range of finishing works involving natural stones and tiles, metal, painting, washed concrete and pebble works.',
+    image: '/images/services/external-development.jpg',
+    features: ['Natural Stones & Tiles', 'Compound Walls & Roads', 'Gates & Culverts', 'Fencing & Drains'],
+  },
+  {
+    title: 'Hardscape',
+    description: 'All works related to Hardscape. We provide and have amazing experience in constructing hard floorings, pathways, colored concretes, wash concretes and more.',
+    image: '/images/services/hardscape.jpg',
+    features: ['Hard Floorings', 'Pathways', 'Colored Concretes', 'Wash Concretes'],
+  },
+  {
+    title: 'Surveys',
+    description: 'All types of Geotechnical Consultancy Works. We expertise in Geotechnical Investigation, Topographical Surveys, and comprehensive site assessments.',
+    image: '/images/services/surveys.jpg',
+    features: ['Geotechnical Investigation', 'Topographical Surveys', 'Site Assessment', 'Soil Testing'],
+  },
+  {
+    title: 'Landscape',
+    description: 'Plumbing system, construction of green walls and other related landscape works. We provide irrigation systems, plants, trees and other greenery solutions.',
+    image: '/images/services/landscape.jpg',
+    features: ['Green Walls', 'Irrigation Systems', 'Plumbing Systems', 'Plants & Greenery'],
+  },
+];
+---
+
+<BaseLayout title="Services" description="HYCE offers civil construction, external development, hardscape, landscape, and survey services with 18+ years of expertise.">
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <div class="banner-overlay"></div>
+    <div class="container banner-content">
+      <span class="section-label" style="color: var(--color-gold);">What We Offer</span>
+      <h1>Our Services</h1>
+      <p>Providing solutions for construction, management, and restoration</p>
+    </div>
+  </section>
+
+  <!-- Services Intro -->
+  <section class="services-intro">
+    <div class="container">
+      <div class="intro-header">
+        <span class="section-label">What We Offer</span>
+        <h2 class="section-title">Providing solutions for construction, management, and restoration.</h2>
+        <p class="section-text" style="margin: 0 auto;">
+          At HYCE ENGINEERS, we are passionate about delivering top-notch services with a detailed understanding of the needs of our clients. Our experienced team of experts have been making a difference in the industry since 2005.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Cards -->
+  <section class="services-detail">
+    <div class="container">
+      {services.map((service, index) => (
+        <div class:list={['service-row', { reverse: index % 2 !== 0 }]}>
+          <div class="service-image">
+            <img src={service.image} alt={service.title} loading="lazy" />
+            <div class="service-index">{String(index + 1).padStart(2, '0')}</div>
+          </div>
+          <div class="service-info">
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+            <ul class="feature-list">
+              {service.features.map(f => (
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- PMC Section -->
+  <section class="pmc-section">
+    <div class="container">
+      <div class="pmc-header">
+        <span class="section-label">Trusted Partnerships</span>
+        <h2 class="section-title">PMC's We Have Worked With</h2>
+        <p class="section-text" style="margin: 0 auto;">
+          As a top-tier firm, we understand the importance of maintaining positive relationships with our clients and PMCs. Our past connections have enabled us to become a force in the industry. We have worked with several PMCs for years, building up a library of best practices.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container cta-content">
+      <h2>Need a Construction Partner?</h2>
+      <p>We bring 18+ years of experience to every project. Let's discuss yours.</p>
+      <a href="/contact/" class="btn btn-white">Get in Touch</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-banner {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--color-navy);
+    overflow: hidden;
+  }
+
+  .banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
+  }
+
+  .banner-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .banner-content h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--color-white);
+    margin-bottom: 12px;
+  }
+
+  .banner-content p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.1rem;
+  }
+
+  /* ===== INTRO ===== */
+  .services-intro {
+    padding: var(--section-padding);
+    text-align: center;
+  }
+
+  .intro-header {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* ===== SERVICE DETAIL ROWS ===== */
+  .services-detail {
+    padding: 0 0 80px;
+  }
+
+  .service-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+
+  .service-row.reverse {
+    direction: rtl;
+  }
+
+  .service-row.reverse > * {
+    direction: ltr;
+  }
+
+  .service-image {
+    position: relative;
+    aspect-ratio: 4/3;
+  }
+
+  .service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: var(--color-gray-200);
+  }
+
+  .service-index {
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    width: 56px;
+    height: 56px;
+    background: var(--color-gold);
+    color: var(--color-navy);
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .service-row.reverse .service-index {
+    left: auto;
+    right: -16px;
+  }
+
+  .service-info h3 {
+    font-size: 1.8rem;
+    color: var(--color-navy);
+    margin-bottom: 16px;
+  }
+
+  .service-info p {
+    color: var(--color-gray-600);
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+
+  .feature-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--color-gray-800);
+  }
+
+  .feature-list svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: var(--color-gold);
+  }
+
+  /* ===== PMC ===== */
+  .pmc-section {
+    padding: var(--section-padding);
+    background: var(--color-gray-100);
+    text-align: center;
+  }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--color-gold-dark) 0%, var(--color-gold) 100%);
+    text-align: center;
+  }
+
+  .cta-content h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--color-navy);
+    margin-bottom: 16px;
+  }
+
+  .cta-content p {
+    font-size: 1.1rem;
+    color: rgba(10, 14, 39, 0.7);
+    margin-bottom: 32px;
+  }
+
+  /* Tablet landscape */
+  @media (max-width: 1024px) {
+    .page-banner {
+      height: 350px;
+    }
+
+    .service-row {
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .service-info h3 {
+      font-size: 1.5rem;
+    }
+
+    .cta-section {
+      padding: 60px 0;
+    }
+  }
+
+  /* Tablet portrait */
+  @media (max-width: 768px) {
+    .page-banner {
+      height: 300px;
+    }
+
+    .banner-content h1 {
+      font-size: 2.2rem;
+    }
+
+    .service-row {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .service-row.reverse {
+      direction: ltr;
+    }
+
+    .service-index {
+      top: -12px;
+      left: -8px;
+      width: 44px;
+      height: 44px;
+      font-size: 1rem;
+    }
+
+    .service-row.reverse .service-index {
+      left: -8px;
+      right: auto;
+    }
+
+    .service-info h3 {
+      font-size: 1.3rem;
+    }
+
+    .feature-list {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .feature-list li {
+      min-height: 44px;
+      padding: 4px 0;
+    }
+
+    .cta-section {
+      padding: 48px 0;
+    }
+  }
+
+  /* Large phones */
+  @media (max-width: 640px) {
+    .page-banner {
+      height: 260px;
+    }
+
+    .banner-content h1 {
+      font-size: 1.8rem;
+    }
+
+    .banner-content p {
+      font-size: 0.95rem;
+    }
+
+    .service-image {
+      aspect-ratio: 16/9;
+    }
+
+    .service-info p {
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+
+    .feature-list li {
+      font-size: 0.85rem;
+    }
+
+    .cta-content p {
+      font-size: 0.95rem;
+    }
+  }
+
+  /* Small phones */
+  @media (max-width: 480px) {
+    .page-banner {
+      height: 220px;
+    }
+
+    .banner-content h1 {
+      font-size: 1.6rem;
+    }
+
+    .services-detail {
+      padding: 0 0 48px;
+    }
+
+    .service-row {
+      margin-bottom: 40px;
+    }
+
+    .service-info h3 {
+      font-size: 1.2rem;
+    }
+
+    .placeholder-img svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+</style>

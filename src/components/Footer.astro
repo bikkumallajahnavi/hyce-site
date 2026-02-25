@@ -1,0 +1,203 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="/images/hyce-logo.png" alt="HYCE Engineers & Infra" class="footer-logo" />
+        <p class="footer-desc">
+          From planning and design to construction and maintenance, we have mastered them all.
+          18+ years of excellence in civil engineering construction.
+        </p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="/">Home</a>
+        <a href="/about/">About Us</a>
+        <a href="/previous-work/">Previous Work</a>
+        <a href="/clients/">Clients</a>
+        <a href="/services/">Services</a>
+        <a href="/careers/">Careers</a>
+        <a href="/contact/">Contact</a>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <a href="/services/">Civil Construction</a>
+        <a href="/services/">External Development</a>
+        <a href="/services/">Hardscape</a>
+        <a href="/services/">Landscape</a>
+        <a href="/services/">Surveys</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Info</h4>
+        <p>Honey Heights, Madinaguda,<br />Telangana 500049</p>
+        <p><strong>Phone:</strong> 040-48576723 / 8977940432</p>
+        <p><strong>Email:</strong> hycengineers@gmail.com</p>
+        <p><strong>Hours:</strong> Mon–Fri 9 AM – 7 PM</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>&copy; {currentYear} HYCE Engineers & Infra. All rights reserved.</p>
+      <p>Built with precision, like everything we do.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-navy);
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .footer-top {
+    padding: 80px 0 48px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 48px;
+  }
+
+  .footer-logo {
+    height: 48px;
+    width: auto;
+    margin-bottom: 20px;
+  }
+
+  .footer-desc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .footer-links h4,
+  .footer-contact h4 {
+    font-family: var(--font-heading);
+    color: var(--color-white);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    transition: var(--transition);
+  }
+
+  .footer-links a:hover {
+    color: var(--color-gold);
+    padding-left: 6px;
+  }
+
+  .footer-contact p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+
+  .footer-contact strong {
+    color: var(--color-gold);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 0;
+  }
+
+  .footer-bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  /* Tablet landscape */
+  @media (max-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 36px;
+    }
+
+    .footer-contact {
+      grid-column: 1 / -1;
+    }
+
+    .footer-top {
+      padding: 60px 0 40px;
+    }
+  }
+
+  /* Tablet portrait */
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      grid-column: 1 / -1;
+    }
+
+    .footer-contact {
+      grid-column: 1 / -1;
+    }
+
+    .footer-bottom-inner {
+      flex-direction: column;
+      text-align: center;
+      gap: 8px;
+    }
+
+    .footer-links a {
+      padding: 4px 0;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  /* Large phones */
+  @media (max-width: 640px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .footer-top {
+      padding: 48px 0 32px;
+    }
+
+    .footer-logo {
+      height: 40px;
+    }
+  }
+
+  /* Small phones */
+  @media (max-width: 480px) {
+    .footer-top {
+      padding: 40px 0 28px;
+    }
+
+    .footer-desc {
+      font-size: 0.85rem;
+    }
+
+    .footer-links a {
+      font-size: 0.85rem;
+    }
+
+    .footer-contact p {
+      font-size: 0.85rem;
+    }
+  }
+</style>

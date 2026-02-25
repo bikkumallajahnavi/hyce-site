@@ -1,0 +1,487 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About" description="Learn about HYCE Engineers & Infra – a commercial construction firm serving for over 18 years with 30+ projects and 98% client satisfaction.">
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <div class="banner-overlay"></div>
+    <div class="container banner-content">
+      <span class="section-label" style="color: var(--color-gold);">Who We Are</span>
+      <h1>About HYCE</h1>
+      <p>Building excellence since 2005</p>
+    </div>
+  </section>
+
+  <!-- About Intro -->
+  <section class="about-intro">
+    <div class="container intro-grid">
+      <div class="intro-image">
+        <img src="/images/hero/about-image.png" alt="HYCE Engineers & Infra - Commercial construction projects" loading="lazy" />
+      </div>
+      <div class="intro-content">
+        <span class="section-label">Who We Are</span>
+        <h2 class="section-title">Commercial construction firm serving for over 18 years.</h2>
+        <p class="section-text">
+          Founded in 2005, HYCE INFRA is a commercial construction firm dedicated to delivering quality projects on time and under budget. We specialize in new construction, renovation, and repurposing of existing structures, and currently serve clients spread all over Hyderabad.
+        </p>
+        <p class="section-text" style="margin-top: 16px;">
+          Our team of experienced professionals brings a breadth of knowledge to every job, and our commitment to excellence ensures that the job is completed correctly and to the highest standards. We have been on the cutting edge of the industry for over 18 years.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-section">
+    <div class="container stats-grid">
+      <div class="stat-card">
+        <span class="stat-number" data-target="30">0</span>
+        <span class="stat-plus">+</span>
+        <span class="stat-label">Projects</span>
+        <p class="stat-desc">We are proud to have been involved in over thirty prestigious projects with unparalleled quality.</p>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-target="15">0</span>
+        <span class="stat-plus">+</span>
+        <span class="stat-label">Clients</span>
+        <p class="stat-desc">We believe our client's needs always come first. We value our clients and listen to their feedback.</p>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-target="30">0</span>
+        <span class="stat-plus">+</span>
+        <span class="stat-label">Professionals</span>
+        <p class="stat-desc">Our team of knowledgeable, efficient and experienced professionals provide innovative solutions.</p>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-target="98">0</span>
+        <span class="stat-plus">%</span>
+        <span class="stat-label">Satisfaction</span>
+        <p class="stat-desc">We receive a large number of referrals from satisfied customers, enabling us to expand services.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="values-section">
+    <div class="container">
+      <div class="values-header">
+        <span class="section-label">Our Values & Mission</span>
+        <h2 class="section-title">We help you with your next project.</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-number">01</div>
+          <h3>Safety & Wellness First</h3>
+          <p>Quality and safety are our top priorities. We are committed to providing the highest standard of excellence in our services, ensuring every project meets rigorous safety standards.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-number">02</div>
+          <h3>Client-Focused Solutions</h3>
+          <p>We understand the importance of a job well done, which is why we only use the best products and reliable workers to complete every project to perfection.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-number">03</div>
+          <h3>Expert Project Team</h3>
+          <p>We are a team of highly skilled managers, engineers and supervisors with excellent coordination and the zeal to complete every project on time with precision.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-number">04</div>
+          <h3>Adopting New Technology</h3>
+          <p>As the construction industry evolves, we stay up-to-date with the latest technologies to keep up with the ever-changing landscape of the industry.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder -->
+  <section class="founder-section">
+    <div class="container founder-grid">
+      <div class="founder-image">
+        <img src="/images/team/founder.jpg" alt="A. Venugopal - Founder & Proprietor of HYCE" loading="lazy" />
+      </div>
+      <div class="founder-content">
+        <span class="section-label">The Force Behind HYCE</span>
+        <h2 class="section-title" style="color: var(--color-white);">A. Venugopal</h2>
+        <h4 style="color: var(--color-gold); font-family: var(--font-body); font-weight: 500; margin-bottom: 20px;">Founder & Proprietor</h4>
+        <p style="color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 16px;">
+          A. Venugopal is the sole proprietor of HYCE company, which he founded in 2005. Throughout his tenure as the leader of the company, he has established a reputation for his ability to build strong relationships with clients and partners.
+        </p>
+        <p style="color: rgba(255,255,255,0.6); line-height: 1.8;">
+          His dedication to helping his clients and partners succeed has made him a respected figure in the industry. In addition to his role as the head of HYCE, he has helped many other companies grow and succeed through expert guidance and support.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ===== PAGE BANNER ===== */
+  .page-banner {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--color-navy);
+    overflow: hidden;
+  }
+
+  .banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
+  }
+
+  .banner-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .banner-content h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--color-white);
+    margin-bottom: 12px;
+  }
+
+  .banner-content p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.1rem;
+  }
+
+  /* ===== ABOUT INTRO ===== */
+  .about-intro {
+    padding: var(--section-padding);
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .intro-image {
+    aspect-ratio: 4/3;
+  }
+
+  .intro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: var(--color-gray-200);
+  }
+
+  .founder-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    background: var(--color-navy-light);
+  }
+
+  /* ===== STATS ===== */
+  .stats-section {
+    padding: 80px 0;
+    background: var(--color-navy);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  .stat-card {
+    text-align: center;
+    padding: 40px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+  }
+
+  .stat-card:hover {
+    border-color: var(--color-gold);
+    transform: translateY(-4px);
+  }
+
+  .stat-number {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    line-height: 1;
+  }
+
+  .stat-plus {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--color-gold);
+  }
+
+  .stat-label {
+    display: block;
+    color: var(--color-white);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 8px 0 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .stat-desc {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+  }
+
+  /* ===== VALUES ===== */
+  .values-section {
+    padding: var(--section-padding);
+    background: var(--color-gray-100);
+  }
+
+  .values-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .value-card {
+    background: var(--color-white);
+    padding: 40px;
+    position: relative;
+    transition: var(--transition);
+    border-bottom: 3px solid transparent;
+  }
+
+  .value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+    border-bottom-color: var(--color-gold);
+  }
+
+  .value-number {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(201, 168, 76, 0.15);
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+
+  .value-card h3 {
+    font-size: 1.2rem;
+    color: var(--color-navy);
+    margin-bottom: 12px;
+  }
+
+  .value-card p {
+    font-size: 0.95rem;
+    color: var(--color-gray-600);
+    line-height: 1.7;
+  }
+
+  /* ===== FOUNDER ===== */
+  .founder-section {
+    padding: var(--section-padding);
+    background: var(--color-navy);
+  }
+
+  .founder-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .founder-image {
+    aspect-ratio: 3/4;
+  }
+
+  /* ===== RESPONSIVE ===== */
+
+  /* Tablet landscape */
+  @media (max-width: 1024px) {
+    .page-banner {
+      height: 350px;
+    }
+
+    .intro-grid {
+      gap: 40px;
+    }
+
+    .founder-grid {
+      gap: 40px;
+    }
+
+    .stats-section {
+      padding: 60px 0;
+    }
+
+    .stat-card {
+      padding: 32px 16px;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+    }
+
+    .values-header {
+      margin-bottom: 48px;
+    }
+
+    .value-card {
+      padding: 32px;
+    }
+  }
+
+  /* Tablet portrait */
+  @media (max-width: 768px) {
+    .page-banner {
+      height: 300px;
+    }
+
+    .banner-content h1 {
+      font-size: 2.2rem;
+    }
+
+    .intro-grid,
+    .founder-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .stat-card {
+      padding: 28px 16px;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+    }
+
+    .stat-plus {
+      font-size: 1.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .value-card {
+      padding: 28px;
+    }
+
+    .founder-image {
+      aspect-ratio: 16/9;
+    }
+  }
+
+  /* Large phones */
+  @media (max-width: 640px) {
+    .page-banner {
+      height: 260px;
+    }
+
+    .banner-content h1 {
+      font-size: 1.8rem;
+    }
+
+    .banner-content p {
+      font-size: 0.95rem;
+    }
+
+    .intro-image {
+      aspect-ratio: 16/9;
+    }
+
+    .stats-section {
+      padding: 48px 0;
+    }
+
+    .stat-desc {
+      font-size: 0.8rem;
+      display: none;
+    }
+
+    .value-number {
+      font-size: 2.2rem;
+    }
+  }
+
+  /* Small phones */
+  @media (max-width: 480px) {
+    .page-banner {
+      height: 220px;
+    }
+
+    .banner-content h1 {
+      font-size: 1.6rem;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .stat-card {
+      padding: 20px 12px;
+    }
+
+    .stat-number {
+      font-size: 1.8rem;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+    }
+
+    .value-card {
+      padding: 24px 20px;
+    }
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target as HTMLElement;
+        const target = parseInt(el.dataset.target || '0');
+        animateNumber(el, target);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.stat-number').forEach(el => observer.observe(el));
+
+  function animateNumber(el: Element, target: number) {
+    let current = 0;
+    const step = target / 40;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      el.textContent = Math.round(current).toString();
+    }, 30);
+  }
+</script>

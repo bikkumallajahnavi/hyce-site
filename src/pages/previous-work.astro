@@ -1,0 +1,384 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = [
+  { title: 'Phoenix Lithop, Hyderabad', category: 'Commercial', image: '/images/projects/phoenix-lithop.jpg' },
+  { title: 'Microsoft Building 1 & 4', category: 'IT Campus', image: '/images/projects/microsoft-building.jpg' },
+  { title: 'Amazon Campus, Hyderabad', category: 'IT Campus', image: '/images/projects/amazon-campus.jpg' },
+  { title: 'Brigade Citadel, Hyderabad', category: 'Residential', image: '/images/projects/brigade-citadel.jpg' },
+  { title: 'Indian School of Business, Hyderabad', category: 'Institutional', image: '/images/projects/isb.jpg' },
+  { title: 'AIG Hospitals, Hyderabad', category: 'Healthcare', image: '/images/projects/aig-hospitals.jpg' },
+  { title: 'ACE Ajanta, Hyderabad', category: 'Commercial', image: '/images/projects/ace-ajanta.jpg' },
+  { title: 'Google Campus, Hyderabad', category: 'IT Campus', image: '/images/projects/google-campus.png' },
+  { title: 'TSSP Convention Hall, Hyderabad', category: 'Commercial', image: '/images/projects/tssp-convention-hall.jpg' },
+  { title: 'CARE Hospital, Hyderabad', category: 'Healthcare', image: '/images/projects/care-hospital.jpg' },
+  { title: 'Ascendus, Hyderabad', category: 'Commercial', image: '/images/projects/ascendus.jpg' },
+  { title: 'Necklace Pride Mall, Sattva', category: 'Commercial', image: '/images/projects/necklace-pride-mall.png' },
+  { title: 'Capgemini Orion, Hyderabad', category: 'IT Campus', image: '/images/projects/capgemini-orion.jpg' },
+  { title: 'CMC, Hyderabad', category: 'Commercial', image: '/images/projects/cmc.jpg' },
+  { title: 'Indian Immunologicals, Hyderabad', category: 'Industrial', image: '/images/projects/indian-immunologicals.jpg' },
+  { title: 'Salarpuria Sattva, Knowledge City, Hyderabad', category: 'IT Campus', image: '/images/projects/salarpuria-sattva.jpg' },
+  { title: 'TATA Consultancy Services, Phase 1, Hyderabad', category: 'IT Campus', image: '/images/projects/tcs-phase-1.jpg' },
+  { title: 'TATA Consultancy Services, Phase 3, Hyderabad', category: 'IT Campus', image: '/images/projects/tcs-phase-3.png' },
+  { title: 'Virtusa Campus, Hyderabad', category: 'IT Campus', image: '/images/projects/virtusa-campus.jpg' },
+  { title: 'Andhra Byrates', category: 'Industrial', image: '/images/projects/andhra-byrates.jpg' },
+];
+
+const categories = ['All', ...new Set(projects.map(p => p.category))];
+---
+
+<BaseLayout title="Previous Work" description="Explore HYCE's portfolio of 30+ prestigious projects including Microsoft, Amazon, Google campuses, hospitals, and commercial buildings across Hyderabad.">
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <div class="banner-overlay"></div>
+    <div class="container banner-content">
+      <span class="section-label" style="color: var(--color-gold);">Key Projects</span>
+      <h1>Previous Work</h1>
+      <p>30+ prestigious projects delivered with excellence</p>
+    </div>
+  </section>
+
+  <!-- Filter Bar -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-bar" id="filter-bar">
+        {categories.map(cat => (
+          <button class:list={['filter-btn', { active: cat === 'All' }]} data-filter={cat}>{cat}</button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="projects-section">
+    <div class="container">
+      <div class="projects-grid" id="projects-grid">
+        {projects.map((project, index) => (
+          <div class="project-card" data-category={project.category}>
+            <div class="project-image">
+              <img src={project.image} alt={project.title} loading="lazy" />
+              <div class="project-overlay">
+                <span class="project-number">{String(index + 1).padStart(2, '0')}</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-category">{project.category}</span>
+              <h3>{project.title}</h3>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Text -->
+  <section class="work-cta">
+    <div class="container work-cta-content">
+      <p class="section-text" style="max-width: 800px; margin: 0 auto; text-align: center;">
+        At HYCE ENGINEERS, we are passionate about delivering top-notch services with a detailed understanding of the needs of our clients. Our experienced team of experts have been making a difference in the industry since 2005. We strive to create unique designs that can stand out and make an impact.
+      </p>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="/contact/" class="btn btn-primary">Start Your Project</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-banner {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--color-navy);
+    overflow: hidden;
+  }
+
+  .banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
+  }
+
+  .banner-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .banner-content h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--color-white);
+    margin-bottom: 12px;
+  }
+
+  .banner-content p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.1rem;
+  }
+
+  /* ===== FILTER ===== */
+  .filter-section {
+    padding: 48px 0 0;
+    background: var(--color-white);
+  }
+
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .filter-btn {
+    padding: 10px 24px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border: 1px solid var(--color-gray-200);
+    background: var(--color-white);
+    color: var(--color-gray-600);
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .filter-btn:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+  }
+
+  .filter-btn.active {
+    background: var(--color-gold);
+    border-color: var(--color-gold);
+    color: var(--color-navy);
+    font-weight: 600;
+  }
+
+  /* ===== PROJECTS GRID ===== */
+  .projects-section {
+    padding: 48px 0 80px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
+  }
+
+  .project-card {
+    transition: all 0.4s ease;
+    overflow: hidden;
+  }
+
+  .project-card.hidden {
+    display: none;
+  }
+
+  .project-image {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    background: var(--color-gray-200);
+  }
+
+  .project-card:hover .project-image img {
+    transform: scale(1.05);
+  }
+
+  .project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10, 14, 39, 0.7) 0%, transparent 50%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .project-card:hover .project-overlay {
+    opacity: 1;
+  }
+
+  .project-number {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: rgba(201, 168, 76, 0.6);
+  }
+
+  .project-info {
+    padding: 20px 0 8px;
+  }
+
+  .project-category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-gold);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .project-info h3 {
+    font-size: 1.1rem;
+    color: var(--color-navy);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  /* ===== CTA ===== */
+  .work-cta {
+    padding: 80px 0;
+    background: var(--color-gray-100);
+  }
+
+  /* Tablet landscape */
+  @media (max-width: 1024px) {
+    .page-banner {
+      height: 350px;
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+  }
+
+  /* Tablet portrait */
+  @media (max-width: 768px) {
+    .page-banner {
+      height: 300px;
+    }
+
+    .banner-content h1 {
+      font-size: 2.2rem;
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .filter-btn {
+      padding: 10px 16px;
+      font-size: 0.8rem;
+      min-height: 44px;
+    }
+
+    .project-info {
+      padding: 14px 0 8px;
+    }
+
+    .project-info h3 {
+      font-size: 0.95rem;
+    }
+  }
+
+  /* Large phones */
+  @media (max-width: 640px) {
+    .page-banner {
+      height: 260px;
+    }
+
+    .banner-content h1 {
+      font-size: 1.8rem;
+    }
+
+    .banner-content p {
+      font-size: 0.95rem;
+    }
+
+    .filter-bar {
+      gap: 6px;
+    }
+
+    .filter-btn {
+      padding: 8px 14px;
+      font-size: 0.75rem;
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .project-category {
+      font-size: 0.65rem;
+      letter-spacing: 1px;
+    }
+
+    .project-info h3 {
+      font-size: 0.85rem;
+    }
+  }
+
+  /* Small phones */
+  @media (max-width: 480px) {
+    .page-banner {
+      height: 220px;
+    }
+
+    .banner-content h1 {
+      font-size: 1.6rem;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .filter-bar {
+      justify-content: flex-start;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      padding-bottom: 8px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .filter-btn {
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .project-info h3 {
+      font-size: 1rem;
+    }
+
+    .project-image {
+      aspect-ratio: 16/10;
+    }
+  }
+</style>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+      cards.forEach(card => {
+        if (filter === 'All' || card.getAttribute('data-category') === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
