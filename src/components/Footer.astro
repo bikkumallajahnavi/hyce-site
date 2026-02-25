@@ -11,8 +11,19 @@ const currentYear = new Date().getFullYear();
           From planning and design to construction and maintenance, we have mastered them all.
           18+ years of excellence in civil engineering construction.
         </p>
+        <div class="footer-socials">
+          <a href="tel:04048576723" class="social-icon" aria-label="Call us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </a>
+          <a href="mailto:hycengineers@gmail.com" class="social-icon" aria-label="Email us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+          <a href="https://maps.google.com/?q=Honey+Heights+Madinaguda+Hyderabad" target="_blank" rel="noopener" class="social-icon" aria-label="Find us on map">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 10-16 0c0 4.5 4 8 8 12z"/><circle cx="12" cy="10" r="3"/></svg>
+          </a>
+        </div>
       </div>
-      <div class="footer-links">
+      <div class="footer-links hide-mobile">
         <h4>Quick Links</h4>
         <a href="/">Home</a>
         <a href="/about/">About Us</a>
@@ -22,7 +33,7 @@ const currentYear = new Date().getFullYear();
         <a href="/careers/">Careers</a>
         <a href="/contact/">Contact</a>
       </div>
-      <div class="footer-links">
+      <div class="footer-links hide-mobile">
         <h4>Services</h4>
         <a href="/services/">Civil Construction</a>
         <a href="/services/">External Development</a>
@@ -32,17 +43,28 @@ const currentYear = new Date().getFullYear();
       </div>
       <div class="footer-contact">
         <h4>Contact Info</h4>
-        <p>Honey Heights, Madinaguda,<br />Telangana 500049</p>
-        <p><strong>Phone:</strong> 040-48576723 / 8977940432</p>
-        <p><strong>Email:</strong> hycengineers@gmail.com</p>
-        <p><strong>Hours:</strong> Mon–Fri 9 AM – 7 PM</p>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 10-16 0c0 4.5 4 8 8 12z"/><circle cx="12" cy="10" r="3"/></svg>
+          <p>Honey Heights, Madinaguda,<br />Telangana 500049</p>
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <p>040-48576723<br />8977940432</p>
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <p>hycengineers@gmail.com</p>
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <p>Mon–Fri 9 AM – 7 PM</p>
+        </div>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
     <div class="container footer-bottom-inner">
       <p>&copy; {currentYear} HYCE Engineers & Infra. All rights reserved.</p>
-      <p>Built with precision, like everything we do.</p>
     </div>
   </div>
 </footer>
@@ -72,6 +94,35 @@ const currentYear = new Date().getFullYear();
   .footer-desc {
     font-size: 0.9rem;
     line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .footer-socials {
+    display: flex;
+    gap: 12px;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+  }
+
+  .social-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .social-icon:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+    background: rgba(201, 168, 76, 0.1);
   }
 
   .footer-links h4,
@@ -99,26 +150,41 @@ const currentYear = new Date().getFullYear();
     padding-left: 6px;
   }
 
-  .footer-contact p {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    line-height: 1.6;
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 
-  .footer-contact strong {
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .contact-item svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
     color: var(--color-gold);
+    margin-top: 2px;
+  }
+
+  .contact-item p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0;
   }
 
   .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding: 20px 0;
   }
 
   .footer-bottom-inner {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.3);
   }
 
   /* Tablet landscape */
@@ -137,67 +203,91 @@ const currentYear = new Date().getFullYear();
     }
   }
 
-  /* Tablet portrait */
+  /* Mobile */
   @media (max-width: 768px) {
-    .footer-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-    }
-
-    .footer-brand {
-      grid-column: 1 / -1;
-    }
-
-    .footer-contact {
-      grid-column: 1 / -1;
-    }
-
-    .footer-bottom-inner {
-      flex-direction: column;
-      text-align: center;
-      gap: 8px;
-    }
-
-    .footer-links a {
-      padding: 4px 0;
-      min-height: 44px;
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  /* Large phones */
-  @media (max-width: 640px) {
-    .footer-grid {
-      grid-template-columns: 1fr;
-      gap: 28px;
+    .hide-mobile {
+      display: none;
     }
 
     .footer-top {
-      padding: 48px 0 32px;
+      padding: 40px 0 32px;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .footer-brand {
+      text-align: center;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .footer-logo {
       height: 40px;
-    }
-  }
-
-  /* Small phones */
-  @media (max-width: 480px) {
-    .footer-top {
-      padding: 40px 0 28px;
+      margin: 0 auto 16px;
     }
 
     .footer-desc {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
+      max-width: 300px;
+      margin: 0 auto 20px;
+      color: rgba(255, 255, 255, 0.45);
     }
 
-    .footer-links a {
-      font-size: 0.85rem;
+    .footer-socials {
+      justify-content: center;
+      gap: 16px;
     }
 
-    .footer-contact p {
-      font-size: 0.85rem;
+    .social-icon {
+      width: 44px;
+      height: 44px;
+      border-color: rgba(201, 168, 76, 0.3);
+      color: var(--color-gold);
+    }
+
+    .social-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .footer-contact {
+      padding-top: 24px;
+      gap: 14px;
+    }
+
+    .footer-contact h4 {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+      color: var(--color-gold);
+    }
+
+    .contact-item {
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-item svg {
+      display: none;
+    }
+
+    .contact-item p {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .footer-bottom {
+      padding: 16px 0;
+    }
+
+    .footer-bottom-inner {
+      font-size: 0.7rem;
     }
   }
 </style>
