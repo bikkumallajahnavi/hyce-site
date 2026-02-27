@@ -2,29 +2,29 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const clients = [
-  { name: 'Microsoft', logo: '' },
+  { name: 'Microsoft', logo: '/images/clients/microsoft.png' },
   { name: 'Amazon', logo: '/images/clients/amazon.png' },
   { name: 'Google', logo: '/images/clients/google.png' },
-  { name: 'Brigade Group', logo: '' },
+  { name: 'Brigade Group', logo: '/images/clients/brigade.svg' },
   { name: 'Indian School of Business', logo: '/images/clients/isb.png' },
   { name: 'AIG Hospitals', logo: '/images/clients/aig.png' },
   { name: 'CARE Hospital', logo: '/images/clients/care.png' },
   { name: 'Capgemini', logo: '/images/clients/capgemini.png' },
   { name: 'TATA Consultancy Services', logo: '/images/clients/tcs.png' },
   { name: 'Virtusa', logo: '/images/clients/virtusa.png' },
-  { name: 'Salarpuria Sattva', logo: '' },
+  { name: 'Salarpuria Sattva', logo: '/images/clients/salarpuria.svg' },
   { name: 'Indian Immunologicals', logo: '/images/clients/indian-immunologicals.png' },
   { name: 'Phoenix Group', logo: '/images/clients/phoenix.png' },
   { name: 'ACE Group', logo: '/images/clients/ace.png' },
-  { name: 'Ascendus', logo: '' },
+  { name: 'Ascendus', logo: '/images/clients/ascendus.svg' },
 ];
 
 const pmcs = [
-  'JLL (Jones Lang LaSalle)',
-  'CBRE',
-  'Cushman & Wakefield',
-  'Colliers International',
-  'Turner Construction',
+  { name: 'JLL (Jones Lang LaSalle)', logo: '/images/clients/JLL_logo.svg' },
+  { name: 'CBRE', logo: '/images/clients/CBRE.png' },
+  { name: 'Cushman & Wakefield', logo: '/images/clients/cushman_wakefield.png' },
+  { name: 'Colliers International', logo: '/images/clients/Colliers_logo.svg.png' },
+  { name: 'Turner Construction', logo: '/images/clients/turner.png' },
 ];
 ---
 
@@ -85,10 +85,8 @@ const pmcs = [
       <div class="pmc-grid">
         {pmcs.map(pmc => (
           <div class="pmc-card">
-            <div class="pmc-logo-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 12h6M12 9v6"/></svg>
-            </div>
-            <span>{pmc}</span>
+            <img src={pmc.logo} alt={pmc.name} class="pmc-logo-img" loading="lazy" />
+            <span>{pmc.name}</span>
           </div>
         ))}
       </div>
@@ -276,15 +274,16 @@ const pmcs = [
     transform: translateY(-4px);
   }
 
-  .pmc-logo-placeholder {
-    width: 48px;
-    height: 48px;
-    color: rgba(255, 255, 255, 0.2);
+  .pmc-logo-img {
+    width: 100%;
+    max-width: 140px;
+    height: 56px;
+    object-fit: contain;
+    transition: var(--transition);
   }
 
-  .pmc-logo-placeholder svg {
-    width: 100%;
-    height: 100%;
+  .pmc-card:hover .pmc-logo-img {
+    transform: scale(1.05);
   }
 
   .pmc-card span {

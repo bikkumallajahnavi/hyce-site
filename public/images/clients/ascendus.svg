@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
+  <polygon points="40,70 55,30 70,70" fill="#0066b3" stroke="none"/>
+  <polygon points="48,70 55,42 62,70" fill="#fff" stroke="none"/>
+  <text x="170" y="55" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0066b3" text-anchor="middle" letter-spacing="2">ASCENDUS</text>
+  <line x1="90" y1="70" x2="260" y2="70" stroke="#0066b3" stroke-width="2"/>
+</svg>

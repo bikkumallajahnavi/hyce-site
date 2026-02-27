@@ -470,30 +470,51 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 </style>
 
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target as HTMLElement;
-        const target = parseInt(el.dataset.target || '0');
-        animateNumber(el, target);
-        observer.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
+<script is:inline>
+  (function() {
+    function animateNumber(el, target) {
+      var current = 0;
+      var step = target / 40;
+      var timer = setInterval(function() {
+        current += step;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        el.textContent = Math.round(current).toString();
+      }, 30);
+    }
 
-  document.querySelectorAll('.stat-number').forEach(el => observer.observe(el));
+    function initCounters() {
+      var statNumbers = document.querySelectorAll('.stat-number[data-target]');
+      if (!statNumbers.length) return;
 
-  function animateNumber(el: Element, target: number) {
-    let current = 0;
-    const step = target / 40;
-    const timer = setInterval(() => {
-      current += step;
-      if (current >= target) {
-        current = target;
-        clearInterval(timer);
+      if (!('IntersectionObserver' in window)) {
+        statNumbers.forEach(function(el) {
+          var target = parseInt(el.getAttribute('data-target') || '0');
+          el.textContent = target.toString();
+        });
+        return;
       }
-      el.textContent = Math.round(current).toString();
-    }, 30);
-  }
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            var target = parseInt(el.getAttribute('data-target') || '0');
+            animateNumber(el, target);
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      statNumbers.forEach(function(el) { observer.observe(el); });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCounters);
+    } else {
+      initCounters();
+    }
+  })();
 </script>

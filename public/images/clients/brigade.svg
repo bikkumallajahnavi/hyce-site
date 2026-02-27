@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
+  <circle cx="50" cy="50" r="32" fill="none" stroke="#1a3c6e" stroke-width="4"/>
+  <text x="50" y="58" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#1a3c6e" text-anchor="middle">B</text>
+  <text x="170" y="45" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#1a3c6e" text-anchor="middle" letter-spacing="3">BRIGADE</text>
+  <text x="170" y="68" font-family="Arial, sans-serif" font-size="13" fill="#666" text-anchor="middle" letter-spacing="5">GROUP</text>
+</svg>
